@@ -38,10 +38,6 @@ describe('My Little Hero', function () { //define suite title by passing a strin
     });
     
     
-    
-    
-
-    
   });
   
   describe('Elements are correct', function () {
@@ -61,15 +57,15 @@ describe('My Little Hero', function () { //define suite title by passing a strin
       expect(label).toEqual(exp.labelGender);
     });
 
-    // it('TC-008 Label for age = ""', function () {
-    //   const label = $$(sel.label)[2].isDisplayed();
-    //   expect(label).toEqual(true);
-    // });
-    //
-    // it('TC-009 Label for story', function () {
-    //   const label = $$('.ant-form-item-required')[3].isDisplayed();
-    //   expect(label).toEqual(true);
-    // });
+    it('TC-008 Label for age = "3. How old is your Hero?"', function () {
+      const text = $$('sel.label')[2].getAttribute('title');
+      expect(label).toEqual(exp.labelAge);
+    });
+
+    it('TC-009 Label for story = 4. What type of story would you like to read?', function () {
+      const text = $$('sel.label')[3].getAttribute('title');
+      expect(label).toEqual(exp.labelStory);
+    });
   
   });
   
